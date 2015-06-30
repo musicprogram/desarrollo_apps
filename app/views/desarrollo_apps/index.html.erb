@@ -1,0 +1,36 @@
+<div class="container">
+<div class="container">
+<p id="notice"><%= notice %></p>
+
+
+<h1>Listing Desarrollo Apps</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Email telefono</th>
+      <th>Descripcion</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @desarrollo_apps.each do |desarrollo_app| %>
+      <tr>
+        <td><%= desarrollo_app.nombre %></td>
+        <td><%= desarrollo_app.email_telefono %></td>
+        <td><%= desarrollo_app.descripcion %></td>
+        <td><%= link_to 'Show', desarrollo_app %></td>
+        <td><%= link_to 'Edit', edit_desarrollo_app_path(desarrollo_app) %></td>
+        <td><%= link_to 'Destroy', desarrollo_app, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Desarrollo app', new_desarrollo_app_path %>
+<div>
+<div>
